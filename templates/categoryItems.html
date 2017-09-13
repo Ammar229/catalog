@@ -1,0 +1,41 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row">
+	<div class="col-md-4">
+		<h1>Categories</h1>
+
+		<ul>
+			{% for category in categories %}
+
+			<li> <a href="{{url_for('showCategoryItems', category_id = category.id)}}"> {{ category.name }} </a>  </li>
+
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="col-md-8">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		      
+		    <ul>
+		        {% for message in messages %}
+		            <li> {{ message }} </li>
+		        {% endfor %}
+		    </ul>
+		    {% endif %}
+		{% endwith %}
+		<h1>{{category_selected.name}}</h1>
+	    <h4> <a href="{{url_for('addItem', category_id = category_selected.id)}}">Add Item</a>  </h4>
+
+
+		<ul>
+			{% for item in items %}
+
+			<li> <a href="{{url_for('showItem', category_id = category_selected.id, item_id = item.id)}}"> {{ item.name }} </a>  </li>
+
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock %}
+

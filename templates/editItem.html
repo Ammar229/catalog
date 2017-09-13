@@ -1,0 +1,26 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row">
+	<div class="col-md-12">
+	    <h1>Edit {{item.name}} From {{category.name}}</h1>
+		<form method="POST">
+		    <dl> 
+				<dt>Name:</dt>
+					<dd><input type="text" name="name" placeholder="{{item.name}}"></dd> <br> <br>
+				<dt>Description:</dt>	
+					<dd><input type="text" name="description" placeholder="{{item.description}}"></dd> <br><br>
+					
+				<input type="submit" name="" value="Edit">
+				<a href="{{url_for('showCategoryItems', category_id = category.id)}}">Cancel</a>
+			</dl>
+		</form>
+	</div>	
+</div>
+{% endblock %}
+
+
+
+
+
+

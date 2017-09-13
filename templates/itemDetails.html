@@ -1,0 +1,20 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row">
+	<div class="col-md-12">
+		<h1>{{item.name}}</h1> From ({{category.name}}) Category
+		<h4>created by: {{creator.name}} </h4>
+		<p>
+			{{item.description}}
+		</p>
+		{% if logged['user_id'] %}
+		{% endif %}
+		{% if logged['user_id'] == creator.id %}
+		<a href="{{url_for('editItem', category_id = category.id,item_id = item.id )}}">Edit</a> | 
+		<a href="{{url_for('deleteItem', category_id = category.id,item_id = item.id )}}">Delete</a>
+		{% endif %}
+	</div>	
+</div>
+
+{% endblock %}

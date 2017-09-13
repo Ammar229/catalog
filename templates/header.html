@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-6">
+		<a href="{{url_for('ShowAllCategories')}}">Home Page</a>
+	</div>
+	<div class="col-md-6 text-right">
+	{% if not logged['username'] %}
+		<div id="signInButton">
+	      <span class="g-signin"
+	        data-scope="openid email"
+	        data-clientid="778404227268-1nnda2indj965431jlevbgatb3vdtdok.apps.googleusercontent.com"
+	        data-redirecturi="postmessage"
+	        data-accesstype="offline"
+	        data-cookiepolicy="single_host_origin"
+	        data-callback="signInCallback"
+	        data-approvalprompt="force">
+	      </span>
+	    </div>
+	 {% endif %} 
+	    <div>
+		    {% if logged['username'] %}
+		    	<h5>Welcome {{logged['username']}} <a class="btn btn-primary" href="/gdisconnect">Logout</a></h5>
+	    		
+			{% endif %}	
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+

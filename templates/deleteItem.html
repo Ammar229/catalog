@@ -1,0 +1,13 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row">
+	<div class="col-md-12">
+		<h1> Are you sure you want to delete {{item.name}} From {{category.name}}? </h1>
+		<form method = 'POST'>
+			<input type='submit' value = 'Delete'>
+			<a href="{{url_for('showCategoryItems', category_id = category.id)}}">Cancel</a>
+		</form>
+	</div>	
+</div>
+{% endblock %}

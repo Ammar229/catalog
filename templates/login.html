@@ -1,0 +1,26 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+
+<!-- GOOGLE PLUS SIGN IN BUTTON-->  
+<div class="row">
+  <div class="col-md-12">       
+    <div id="signInButton">
+      <span class="g-signin"
+        data-scope="openid email"
+        data-clientid="778404227268-1nnda2indj965431jlevbgatb3vdtdok.apps.googleusercontent.com"
+        data-redirecturi="postmessage"
+        data-accesstype="offline"
+        data-cookiepolicy="single_host_origin"
+        data-callback="signInCallback"
+        data-approvalprompt="force">
+      </span>
+    </div>
+   </div>  
+</div>
+<!--END GOOGLE PLUS SIGN IN BUTTON -->
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "pageContainer.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row">
+	<div class="col-md-12">
+		<h2>Add New Item in {{category.name}} Category </h2>
+		<form method="POST">
+			<dl>
+				<dt>Name:</dt>
+					<dd><input type="text" name="name"  value=""></dd>
+				<input type="submit" value="Add">
+				<a href="{{url_for('ShowAllCategories')}}">Cancel</a>
+			</dl>	
+		</form>
+	</div>	
+</div>
+{% endblock %}
